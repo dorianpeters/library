@@ -15,9 +15,8 @@ button {
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: 10% 85% 5%;
     height: 100vh;
 }
 
@@ -33,4 +32,16 @@ button {
 }
 .content {
     display: flex;
+    background-image: url("library.jpg");
+    background-size: 100% auto;
+    min-height: 700px;
+    min-width: 700px;
+}
+
+.book {
+    height: 200px;
+    width: 150px;
+    background-color: navy;
+    color: white;
+    border: greenyellow solid 2px;
 }
