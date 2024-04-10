@@ -1,5 +1,7 @@
 const myLibrary = [];
-
+const openButton = document.querySelector("[add-book-btn]");
+const closeButton = document.querySelector("[close-modal-btn]");
+const modal = document.querySelector("[book-modal]");
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -17,5 +19,16 @@ function Book(title, author, pages, read) {
   };
 }
 
+function addBookToLibrary() {}
+
+function displayBooks() {}
+
+openButton.addEventListener("click", () => {
+  modal.showModal();
+});
+
+closeButton.addEventListener("click", () => {
+  modal.close();
+});
 let newBook = new Book("The Hobbit", "J.R.R. Tolkien", 295, true);
 console.log(newBook.info());
