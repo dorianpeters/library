@@ -33,6 +33,7 @@ button {
 }
 .content {
   display: flex;
+  flex-wrap: wrap;
   background-image: url("library.jpg");
   background-size: 100% auto;
   min-height: 700px;
