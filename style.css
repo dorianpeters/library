@@ -1,47 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 body {
-    width: 100vw;
-    margin: 0;
-    overflow: hidden;
-    font-family: Roboto, sans-serif;
+  width: 100vw;
+  margin: 0;
+  overflow: hidden;
+  font-family: Roboto, sans-serif;
 }
 
 button {
-    border: none;
-    border-radius: 8px;
-    background: #eee;
-    padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #eee;
+  padding: 10px;
 }
 
 .container {
-    display: grid;
-    grid-template-rows: 10% 85% 5%;
-    height: 100vh;
+  display: grid;
+  grid-template-rows: 10% 85% 5%;
+  height: 100vh;
 }
 
 .header,
 .footer {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: darkgray;
 }
 .header {
-    font-size: 5rem;
+  font-size: 5rem;
+  color: whitesmoke;
 }
 .content {
-    display: flex;
-    background-image: url("library.jpg");
-    background-size: 100% auto;
-    min-height: 700px;
-    min-width: 700px;
+  display: flex;
+  background-image: url("library.jpg");
+  background-size: 100% auto;
+  min-height: 700px;
+  min-width: 700px;
+  padding: 5% 10%;
+  gap: 100px;
 }
 
 .book {
-    height: 200px;
-    width: 150px;
-    background-color: navy;
-    color: white;
-    border: greenyellow solid 2px;
+  height: 200px;
+  width: 150px;
+  background-color: navy;
+  color: white;
+  border: greenyellow solid 2px;
 }
