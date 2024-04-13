@@ -48,4 +48,5 @@ button {
   background-color: navy;
   color: white;
   border: greenyellow solid 2px;
+  padding: 0.5rem;
 }

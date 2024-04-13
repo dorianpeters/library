@@ -40,16 +40,6 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-
-  this.info = function () {
-    let str = `${this.title} by ${this.author}, ${this.pages} pages, `;
-    if (this.read) {
-      str += "read";
-    } else {
-      str += "not read yet";
-    }
-    return str;
-  };
 }
 
 function addBookToLibrary() {}
