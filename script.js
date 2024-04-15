@@ -86,5 +86,8 @@ function displayBooks() {
     bookDiv.appendChild(removeBtn);
 
     content.appendChild(bookDiv);
+    removeBtn.addEventListener("click", (event) => {
+      event.target.parentElement.remove();
+    });
   }
 }
