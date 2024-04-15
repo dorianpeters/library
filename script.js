@@ -21,7 +21,9 @@ console.table(myLibrary);
 const content = document.querySelector(".content");
 const openButton = document.querySelector("[add-book-btn]");
 const closeButton = document.querySelector("[close-modal-btn]");
+const submitButton = document.querySelector("[submit-modal-btn]");
 const modal = document.querySelector("[book-modal]");
+const form = document.querySelector("form");
 
 displayBooks();
 
@@ -31,6 +33,19 @@ openButton.addEventListener("click", () => {
 });
 
 closeButton.addEventListener("click", () => {
+  modal.close();
+});
+
+submitButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const title = form.elements["title"].value;
+  const author = form.elements["author"].value;
+  const pages = form.elements["pages"].value;
+  const read = form.elements["read"].value;
+  console.log(read);
+  myLibrary.push(new Book(title, author, pages, read));
+  content.replaceChildren();
+  displayBooks();
   modal.close();
 });
 
@@ -51,7 +66,6 @@ function displayBooks() {
     const bookText = document.createTextNode(
       `${book.title} by ${book.author}, ${book.pages} pages`
     );
-
     bookDiv.appendChild(bookText);
     content.appendChild(bookDiv);
   }

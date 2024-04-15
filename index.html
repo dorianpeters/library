@@ -20,24 +20,31 @@
           <button add-book-btn>Add Book</button>
         </div>
         <dialog book-modal>
-          <form method="dialog">
+          <form method="dialog" id="add-book-form">
             <h2>Add Book</h2>
             <ul>
               <li>
                 <label for="title">Title:</label><br />
-                <input type="text" id="title" name="title" />
+                <input type="text" id="title" name="title" required />
               </li>
               <li>
                 <label for="author">Author:</label><br />
-                <input type="text" id="author" name="author" />
+                <input type="text" id="author" name="author" required />
               </li>
               <li>
                 <label for="pages">Number of pages:</label><br />
-                <input type="number" id="pages" name="pages" />
+                <input type="number" id="pages" name="pages" required />
               </li>
               <li>
-                <button close-modal-btn>Close</button>
-                <button type="dialog">Submit</button>
+                <label for="cars">Read Book?</label><br />
+                <select name="read" id="read">
+                  <option value="true">Read</option>
+                  <option value="false">Not Read</option>
+                </select>
+              </li>
+              <li>
+                <button close-modal-btn type="button">Close</button>
+                <button submit-modal-btn type="submit">Submit</button>
               </li>
             </ul>
           </form>

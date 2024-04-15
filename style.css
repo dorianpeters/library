@@ -24,12 +24,12 @@ button {
 .footer {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 10px;
-  background-color: darkgray;
+  background-color: lightgray;
 }
 .header {
-  font-size: 5rem;
-  color: whitesmoke;
+  font-size: 3rem;
 }
 .content {
   display: flex;
@@ -39,15 +39,15 @@ button {
   min-height: 700px;
   min-width: 700px;
   padding: 5% 10%;
-  gap: 100px;
+  gap: 50px;
 }
 
 .book {
   height: 200px;
   width: 150px;
-  background-color: navy;
-  color: white;
-  border: greenyellow solid 2px;
+  background-color: whitesmoke;
+  color: black;
+  border: darkgray solid 3px;
   padding: 0.5rem;
 }
 
@@ -64,4 +64,7 @@ ul,
 li {
   list-style: none;
   padding: 10px 0;
+}
+dialog::backdrop {
+  backdrop-filter: blur(1px);
 }
