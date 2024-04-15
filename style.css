@@ -51,6 +51,17 @@ button {
   padding: 0.5rem;
 }
 
+.book :first-child {
+  font-weight: bold;
+}
+.book :nth-child(2) {
+  font-style: italic;
+}
+.book button {
+  background-color: darkgrey;
+  border: red solid 1px;
+}
+
 input,
 select,
 textarea {
