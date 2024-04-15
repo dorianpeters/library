@@ -51,16 +51,17 @@ button {
   padding: 0.5rem;
 }
 
-    input,
-    select,
-    textarea {
-      font-family: inherit;
-      font-size: 100%;
-      width: 200px;
-      padding: 0;
-      margin: 0;
-    }
-    ul, li {
-      list-style: none;
-      padding: 10px 0;
-    }
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  width: 200px;
+  padding: 0;
+  margin: 0;
+}
+ul,
+li {
+  list-style: none;
+  padding: 10px 0;
+}
