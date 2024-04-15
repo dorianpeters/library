@@ -21,9 +21,26 @@
         </div>
         <dialog book-modal>
           <form method="dialog">
-            <input type="text" />
+            <h2>Add Book</h2>
+    <ul>
+      <li>
+        <label for="title">Title:</label><br />
+        <input type="text" id="title" name="title">
+      </li>
+      <li>
+        <label for="author">Author:</label><br />
+        <input type="text" id="author" name="author">
+      </li>
+      <li>
+        <label for="pages">Number of pages:</label><br />
+        <input type="number" id="pages" name="pages">
+      </li>
+      <li>
             <button close-modal-btn>Close</button>
             <button type="dialog">Submit</button>
+      </li>
+    </ul>
+
           </form>
         </dialog>
       </div>
