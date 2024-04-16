@@ -17,6 +17,7 @@
 // Main function
 const myLibrary = [];
 myLibrary.push(new Book("The Hobbit", "J.R.R. Tolkien", 295, true));
+myLibrary.push(new Book("The Hobbit2", "J.R.R. Tolkien", 295, true));
 console.table(myLibrary);
 
 const content = document.querySelector(".content");
@@ -57,13 +58,12 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.index = myLibrary.length;
 }
 
 function addBookToLibrary() {}
 
 function displayBooks() {
-  for (const book of myLibrary) {
+  for (const [i,book] of myLibrary.entries()) {
     const bookDiv = document.createElement("div");
     bookDiv.classList.add("book");
 
@@ -86,8 +86,13 @@ function displayBooks() {
     bookDiv.appendChild(removeBtn);
 
     content.appendChild(bookDiv);
+    bookDiv.setAttribute("data-index", i);
+
     removeBtn.addEventListener("click", (event) => {
-      event.target.parentElement.remove();
+      const currentBookDiv = event.target.parentElement;
+      const index = parseInt(currentBookDiv.getAttribute("data-index"));
+      myLibrary.splice(index,1);
+      currentBookDiv.remove();
     });
   }
 }
