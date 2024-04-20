@@ -58,12 +58,20 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
+  this.toggleRead = function () {
+    if (read === true) {
+      read = false;
+    } else {
+      read = true;
+    }
+    return read;
+  };
 }
 
 function addBookToLibrary() {}
 
 function displayBooks() {
-  for (const [i,book] of myLibrary.entries()) {
+  for (const [i, book] of myLibrary.entries()) {
     const bookDiv = document.createElement("div");
     bookDiv.classList.add("book");
 
@@ -73,8 +81,14 @@ function displayBooks() {
     const authorText = document.createTextNode(`${book.author}`);
     const pagesP = document.createElement("p");
     const pagesText = document.createTextNode(`${book.pages} pages`);
+
     const removeBtn = document.createElement("button");
     removeBtn.innerHTML = "Remove";
+    removeBtn.classList.add("remove-btn");
+
+    const readBtn = document.createElement("button");
+    readBtn.innerHTML = "Read";
+    readBtn.classList.add("read-btn");
 
     titleP.appendChild(titleText);
     authorP.appendChild(authorText);
@@ -84,6 +98,7 @@ function displayBooks() {
     bookDiv.appendChild(authorP);
     bookDiv.appendChild(pagesP);
     bookDiv.appendChild(removeBtn);
+    bookDiv.appendChild(readBtn);
 
     content.appendChild(bookDiv);
     bookDiv.setAttribute("data-index", i);
@@ -91,8 +106,19 @@ function displayBooks() {
     removeBtn.addEventListener("click", (event) => {
       const currentBookDiv = event.target.parentElement;
       const index = parseInt(currentBookDiv.getAttribute("data-index"));
-      myLibrary.splice(index,1);
+      myLibrary.splice(index, 1);
       currentBookDiv.remove();
+    });
+
+    readBtn.addEventListener("click", (event) => {
+      const currentBookDiv = event.target.parentElement;
+      const index = parseInt(currentBookDiv.getAttribute("data-index"));
+      const read = myLibrary[index].toggleRead();
+      if (read) {
+        currentBookDiv.querySelector(".read-btn").classList.add("read");
+      } else {
+        currentBookDiv.querySelector(".read-btn").classList.remove("read");
+      }
     });
   }
 }

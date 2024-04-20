@@ -58,11 +58,19 @@ button {
 .book :nth-child(2) {
   font-style: italic;
 }
-.book button {
+.book .remove-btn {
   background-color: darkgrey;
   border: red solid 1px;
 }
+.book .read-btn {
+  background-color: darkgrey;
+  border: blue solid 1px;
+}
 
+.book .read-btn .read {
+  background-color: green;
+  border: blue solid 1px;
+}
 input,
 select,
 textarea {
