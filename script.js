@@ -58,11 +58,11 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.toggleRead = function () {
-    if (read === true) {
-      read = false;
+  Book.prototype.toggleRead = function () {
+    if (this.read === true) {
+      this.read = false;
     } else {
-      read = true;
+      this.read = true;
     }
     return read;
   };
