@@ -1,24 +1,17 @@
-// // Starter data
-// const myLibrary = [
-//   {
-//     title: "One Hundred Years of Solitude",
-//     author: "Gabriel Garcia Marquez",
-//     pages: 100,
-//     read: true,
-//   },
-//   {
-//     title: "The Great Gatsby",
-//     author: "F. Scott Fitzgerald",
-//     pages: 200,
-//     read: false,
-//   },
-// ];
-
 // Main function
 const myLibrary = [];
+Book.prototype.toggleRead = function () {
+  console.log(this);
+  if (this.read === true) {
+    this.read = false;
+  } else {
+    this.read = true;
+  }
+  return this.read;
+};
+
 myLibrary.push(new Book("The Hobbit", "J.R.R. Tolkien", 295, true));
-myLibrary.push(new Book("The Hobbit2", "J.R.R. Tolkien", 295, true));
-console.table(myLibrary);
+myLibrary.push(new Book("The Hobbit2", "J.R.R. Tolkien", 395, true));
 
 const content = document.querySelector(".content");
 const openButton = document.querySelector("[add-book-btn]");
@@ -28,7 +21,6 @@ const modal = document.querySelector("[book-modal]");
 const form = document.querySelector("form");
 
 displayBooks();
-let removeButtons = document.querySelectorAll(".books button");
 
 // Arrow functions
 openButton.addEventListener("click", () => {
@@ -58,14 +50,6 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  Book.prototype.toggleRead = function () {
-    if (this.read === true) {
-      this.read = false;
-    } else {
-      this.read = true;
-    }
-    return read;
-  };
 }
 
 function addBookToLibrary() {}
